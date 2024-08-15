@@ -1,11 +1,12 @@
 import PokemonCard from './PokemonCard';
+import PokemonContext from '../context/PokemonContext';
 
 // TODO: import the PokemonContext and useContext
 
 const PokemonCollection = () => {
 
     // TODO: Replace this to get the pokemon from PokemonContext
-    const allPokemon = [];
+    const allPokemon = PokemonContext;
 
     return (
         <div className="ui six cards">
