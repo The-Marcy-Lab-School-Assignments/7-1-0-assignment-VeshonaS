@@ -34,12 +34,12 @@ const PokemonProvider = ({ children }) => {
     // TODO: use useEffect to fetch data from the local JSON server (remember to start JSON server!)
     useEffect(() => {
         const pokemonFetch = async () => {
-          const [data, error] = await fetchData("http://localhost:4000/pokemon");
+          const [data, error] = await handleFetch("http://localhost:4000/pokemon");
           if (data) setAllPokemon(data);
           if (error) setError(error);
         };
         pokemonFetch();
-        console.log(allPokemono)
+        console.log(allPokemon)
       }, []);
     
     // TODO: Add values to be included in the context here

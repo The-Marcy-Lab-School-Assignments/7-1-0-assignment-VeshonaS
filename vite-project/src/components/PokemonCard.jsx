@@ -1,19 +1,27 @@
 // TODO: This component should render a single pokemon's stats and image.
+import { useState } from "react";
+const PokemonCard = ({name, hp ,frontImage, backImage}) => {
+    // console.log(name, hp ,frontImage, backImage)
+    const [isFirstImage, setIsFirstImage] = useState(true);
 
-const PokemonCard = () => {
+  const toggleImage = () => {
+    setIsFirstImage(!isFirstImage);
+  };
     return (
         <div className="ui card">
             <div>
-                <div className="image">
-                    <img alt="pokemon name" src="" />
+                <div className="image"onClick={toggleImage}>
+                    {/* <img alt="pokemon name" src= {frontImage } />
+                    <img alt="pokemon name" src= {backImage } /> */}
+                    <img src={isFirstImage ? frontImage : backImage}/>
                 </div>
                 <div className="content">
-                    <div className="header">Pokemon name</div>
+                    <div className="header">{name} </div>
                 </div>
                 <div className="extra content">
                     <span>
                         <i className="icon heartbeat red" />
-                        Pokemon HP
+                        {hp}
                     </span>
                 </div>
             </div>
